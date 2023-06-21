@@ -21,6 +21,7 @@ const {
   DB_USER,
   DB_PASSWORD,
   DB_NAME,
+  MONGO_DB_URL,
   COOKIE_KEY,
   PORT,
   NODE_ENV,
@@ -93,7 +94,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.ynmnh.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`,
+    `${MONGO_DB_URL}`,
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,
